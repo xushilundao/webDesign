@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <level1>
+    <level2>
+      <url>https://www.example.com/page1</url>
+      <url>https://www.example.com/page2</url>
+      <url>https://www.example.com/page3</url>
+    </level2>
+  </level1>
+  <level3>
+    <level4>
+      <url>https://www.example.com/page4</url>
+      <url>https://www.example.com/page5</url>
+      <url>https://www.example.com/page6</url>
+    </level4>
+  </level3>
+</root>
+
