@@ -111,6 +111,28 @@
         animate();
     </script>
 <?php
+$visitor_count = 0;
+$visitor_file = "visitor_count.txt"; // 存储访问者数量的文件名
+$ip_address = $_SERVER['REMOTE_ADDR']; // 客户端的 IP 地址
+
+// 如果文件存在，则读取访问者数量和 IP 地址
+if (file_exists($visitor_file)) {
+  $visitor_data = file_get_contents($visitor_file);
+  $visitor_data_array = explode(",", $visitor_data);
+  $visitor_count = intval($visitor_data_array[0]);
+  $ip_address = $visitor_data_array[1];
+}
+
+// 增加访问者数量
+$visitor_count++;
+$visitor_data = $visitor_count . "," . $ip_address;
+file_put_contents($visitor_file, $visitor_data);
+
+// 显示欢迎信息
+echo "尊贵的人工智能科学家，程序员，prompt scientist,火箭工程师，研究员，学士，博士，院士们，你们好！您的IP地址是：" . $ip_address . "，您是第 " . $visitor_count . " 位访问者。";
+?>
+
+<?php
 $urls = array(
 "https://freegpt.one/",
 "https://chat.openai.com/chat",
